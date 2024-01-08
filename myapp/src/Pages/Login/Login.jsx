@@ -1,6 +1,3 @@
-
-
-
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { signInWithEmailAndPassword } from "firebase/auth";
@@ -30,7 +27,7 @@ function Login() {
     setErrorMsg("");
 
     setSubmitButtonDisabled(true);
-    axios.post('http://localhost:5000/login', values)
+    axios.post(`${process.env.REACT_APP_API_URL}/login`, values)
     .then(response => {
         localStorage.setItem('token', response.data.token);
         localStorage.setItem('name', response.data.name);

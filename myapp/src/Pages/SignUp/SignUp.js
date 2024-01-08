@@ -26,7 +26,7 @@ function Signup() {
     setErrorMsg("");
 
     setSubmitButtonDisabled(true);
-    axios.post('http://localhost:5000/register', values)
+    axios.post(`${process.env.REACT_APP_API_URL}/register`, values)
     .then(response => {
         console.log(response);
         console.log(response.data);
